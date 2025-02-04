@@ -1,0 +1,40 @@
+id: load_required_taxi_data_to_bucket
+namespace: company.team
+
+concurrency:
+  limit: 1
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{kv('GCP_PROJECT')}}"
+      location: "{{kv('GCP_LOC')}}"
+      bucket: "{{kv('GCP_BUCKET')}}"
+
+inputs:
+  - id: months
+    type: ARRAY
+    itemType: STRING
+    defaults: ["01", "02", "03", "04", "05", "06" ]
+
+tasks:
+  - id: set_labels
+    type: io.kestra.plugin.core.execution.Labels
+    labels:
+      taxi: "yellow"
+      year: "2024"
+      months: "{{ inputs.months | join(', ') }}"
+  - id: for_each_month
+    type: io.kestra.plugin.core.flow.ForEach
+    values: "{{inputs.months}}"
+    tasks:
+      - id: prepare_data
+        type: io.kestra.plugin.scripts.shell.Commands
+        taskRunner:
+          type: io.kestra.plugin.core.runner.Process
+        commands:
+          - wget -O - https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-{{taskrun.value}}.parquet 
+        outputFiles:
+          - "*.csv"
+
