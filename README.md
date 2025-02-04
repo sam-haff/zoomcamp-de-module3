@@ -12,4 +12,4 @@ Project's **Kestra flows** are located in the <em>./kestra/flows</em> directory.
    The flows are delivered to the GCP **Kestra** instance by the means of the **GitHub Actions workflows**(<em> ./.github</em> folder).
 
 ## Module Questions
-  The answers along with the explanation and queries are in the <em>./answers</em> folder(<em>./answers/combined.md</em> for all the answers in a single file). The required data was uploaded to buckets using Kestra(the flow is in the <em>./kestra/flows</em> directory). 
+  The answers along with the explanation and queries are in the <em>./answers</em> folder(<em>./answers/combined.md</em> for all the answers in a single file). The required data was uploaded to buckets using Kestra(the flow is in the <em>./kestra/flows</em> directory).   
