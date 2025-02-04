@@ -13,7 +13,7 @@ pluginDefaults:
       bucket: "{{kv('GCP_BUCKET')}}"
 
 variables:
-  file: yellow_tripdata_2024-{{taskrun.value}}.parquet" 
+  file: "yellow_tripdata_2024-{{taskrun.value}}.parquet" 
   gcp_file: "gs://{{kv('GCP_BUCKET')}}/{{render(vars.file)}}"
   data: "{{outputs.prepare_data.outputFiles[render(vars.file)]}}"
 
