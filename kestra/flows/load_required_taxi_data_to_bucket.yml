@@ -39,7 +39,7 @@ tasks:
         taskRunner:
           type: io.kestra.plugin.core.runner.Process
         commands:
-          - wget -O {{render(vars.file)}} https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-{{taskrun.value}}.parquet 
+          - wget -v -O {{render(vars.file)}} https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-{{taskrun.value}}.parquet 
         outputFiles:
           - "*.csv"
       - id: upload_data
