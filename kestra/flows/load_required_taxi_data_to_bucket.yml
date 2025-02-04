@@ -15,7 +15,7 @@ pluginDefaults:
 variables:
   file: "yellow_tripdata_2024-{{taskrun.value}}.parquet" 
   gcp_file: "gs://{{kv('GCP_BUCKET')}}/{{render(vars.file)}}"
-  data: "{{outputs.prepare_data.outputFiles[render(vars.file)]}}"
+  data: "{{currentEachOutput(outputs.prepare_data).outputFiles[render(vars.file)]}}"
 
 inputs:
   - id: months
@@ -41,14 +41,10 @@ tasks:
         commands:
           - wget -v -O {{render(vars.file)}} https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2024-{{taskrun.value}}.parquet 
         outputFiles:
-          - "*.csv"
+          - "*.parquet"
       - id: upload_data
         type: io.kestra.plugin.gcp.gcs.Upload
         from: "{{render(vars.data)}}"
         to: "{{render(vars.gcp_file)}}"
       - id: purge_files
         type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
-
-  
-
-
