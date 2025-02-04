@@ -46,6 +46,9 @@ tasks:
         type: io.kestra.plugin.gcp.gcs.Upload
         from: "{{render(vars.data)}}"
         to: "{{render(vars.gcp_file)}}"
+      - id: purge_files
+        type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+
   
 
 
