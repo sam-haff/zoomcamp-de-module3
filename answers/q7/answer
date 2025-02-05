@@ -1,0 +1,12 @@
+Answer: GCP Bucket
+
+Explanation: 
+Docs: external tables let you query structured data in external data stores
+In own words:
+From my current exposure to BQ, external tables look like smart parsers, 
+integrated into the BigQuery ecosystem by smart abstraction.
+
+While they imitate a regular table, they act more like a proxy object, 
+that kinda implements a table interface (allowing usual table ops on it), 
+with all the fetching ops using external storage for the actual 
+data (structured using provided or parsed schema).

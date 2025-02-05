@@ -1,0 +1,4 @@
+Answer: 20,332,093
+
+Explanation:
+You can find the rows number in the properties of the table. Alternatively, you could run COUNT(*), but that comes with a cost.

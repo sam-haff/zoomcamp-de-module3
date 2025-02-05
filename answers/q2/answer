@@ -1,0 +1,13 @@
+Answer: 0 MB for the External Table and 155.12 MB 
+for the Materialized Table.
+
+Explanation:
+Checked the approx. processed data in
+the BigQuery Studio(top right corner when
+cursor is at the target query).
+
+Queries:
+    SELECT DISTINCT(VendorID)
+    FROM `kestra-de.bq_dataset.yellow_tripdata_2024_ext`;
+    SELECT DISTINCT(VendorID)
+    FROM `kestra-de.bq_dataset.yellow_tripdata_2024`;

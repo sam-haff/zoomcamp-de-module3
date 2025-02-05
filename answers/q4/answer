@@ -1,0 +1,7 @@
+Answer: 8,333
+
+Explanation:
+Got with the help of the following query:
+    SELECT COUNT(*)
+    FROM `kestra-de.bq_dataset.yellow_tripdata_2024`
+    WHERE fare_amount=0;

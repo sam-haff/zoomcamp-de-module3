@@ -1,0 +1,2 @@
+Answer: Partition by tpep_dropoff_timedate and Cluster on VendorID
+Explanation: TODO
