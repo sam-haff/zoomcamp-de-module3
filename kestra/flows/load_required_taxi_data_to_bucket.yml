@@ -48,3 +48,4 @@ tasks:
         to: "{{render(vars.gcp_file)}}"
       - id: purge_files
         type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+
