@@ -91,3 +91,10 @@ What is the estimated amount of data that will be read when this query is execut
     Explanation: 
     - As per https://www.youtube.com/watch?v=-CqXf7vhhDs&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=28
     Partitioning or Clustering tables with small data size don't provide any query perfomance benefits while potentially resulting in more costs(for metadata reads and maintenance).
+
+9. Write a SELECT count(*) query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
+    
+    **Answer:** 0 bytes.
+
+    Explanation: 
+    - This info is already stored in the metadata.
