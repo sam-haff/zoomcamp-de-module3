@@ -97,4 +97,4 @@ What is the estimated amount of data that will be read when this query is execut
     **Answer:** 0 bytes.
 
     Explanation: 
-    - This info is already stored in the metadata.
+    - This info is already stored in the metadata. 
