@@ -1,7 +1,7 @@
 # Module 3. Solutions
 
 ## Kestra
-    The project uses the same infrastructure setup as was used in the second module solution.
+The project uses the same infrastructure setup as was used in the second module solution.
    **Kestra** is deployed using **GCP compute engine**. Allocation of GCP resources is done with **Terraform**. 
 All the **.tf** files can be found in the <em>./terraform</em> directory.
 
